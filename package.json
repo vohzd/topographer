@@ -1,0 +1,17 @@
+{
+  "name": "topographer",
+  "version": "0.0.1",
+  "description": "topographer",
+  "author": "Ben <allobon@gmail.com>",
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "@nuxtjs/axios": "^5.5.1",
+    "nuxt": "^2.7.1",
+    "vue-draggable-resizable": "^2.0.0-rc1"
+  }
+}
