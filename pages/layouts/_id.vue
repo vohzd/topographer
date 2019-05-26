@@ -1,19 +1,14 @@
 <template lang="html">
-  <main class="editor">
-    <editor-toolbar />
-    <div class="editor-viewport">
-      <vue-draggable-resizable parent=".editor-viewport">
-        <p>Grid 20x20 starting from the top-left corner</p>
-      </vue-draggable-resizable>
-    </div>
+  <main class="page-editor">
+    
   </main>
 </template>
 
 <script>
-import EditorToolbar from "~/components/editor/EditorToolbar.vue";
+//import EditorToolbar from "~/components/editor/EditorToolbar.vue";
 export default {
   components: {
-    "editor-toolbar": EditorToolbar
+    //"editor-toolbar": EditorToolbar
   },
   data(){
     return {

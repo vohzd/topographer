@@ -17,9 +17,19 @@ export default {
 <style lang="css">
   html,body,p,ol,ul,li,dl,dt,dd,blockquote,figure,fieldset,legend,textarea,pre,iframe,hr,h1,h2,h3,h4,h5,h6{margin:0;padding:0}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal}ul{list-style:none}button,input,select,textarea{margin:0}html{box-sizing:border-box}*,*:before,*:after{box-sizing:inherit}img,embed,iframe,object,audio,video{height:auto;max-width:100%}iframe{border:0}table{border-collapse:collapse;border-spacing:0}td,th{padding:0;text-align:left}
 
-  body {
-    font-family: monospace;
+
+  @font-face {
+      font-family: "mono";
+      src: url("~assets/fonts/mono.ttf");
+      font-weight: normal;
+      font-style: normal;
   }
+
+
+  body {
+    font-family: "mono";
+  }
+
   a {
     color: #532a55;
   }
@@ -31,5 +41,38 @@ export default {
     width: 100%;
     float: left;
   }
+
+  .flex {
+    display: flex;
+  }
+
+  .tool-select {
+    background: rgba(0,0,0,0.1);
+    width: 50%;
+    padding: 32px;
+  }
+
+  .tool-select h2 {
+    font-size: 32px;
+    width: 100%;
+    padding-bottom: 16px;
+    border-bottom: 2px solid rgba(0,0,0,0.1);
+    position: relative;
+
+  }
+
+  .tool-icon {
+    width: 48px;
+    position: absolute;
+  }
+
+  .tool-text {
+    margin-left: 64px;
+    padding-top: 16px;
+    height: 64px;
+    vertical-align: middle;
+  }
+
+
 
 </style>

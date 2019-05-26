@@ -1,11 +1,16 @@
 <template lang="html">
   <header class="app-header-toolbar">
-    <span>Topographer</span>
+    <app-logo />
   </header>
 </template>
 
 <script>
+import AppLogo from "~/components/nav/AppLogo.vue";
+
 export default {
+  components: {
+    "app-logo": AppLogo
+  }
 }
 </script>
 
