@@ -31,8 +31,16 @@ export default {
   }
 
   a {
-    color: #532a55;
+    color: #156881;
+    text-decoration: none;
+    transition: 0.7s all;
   }
+
+  a:hover {
+    color: #26a3c8;
+    opacity: 0.7;
+  }
+
   .container-padding {
     padding: 64px;
   }
@@ -46,13 +54,17 @@ export default {
     display: flex;
   }
 
-  .tool-select {
+  .mt {
+    margin-top: 16px;
+  }
+
+  .content-selection {
     background: rgba(0,0,0,0.1);
-    width: 50%;
+    width: 100%;
     padding: 32px;
   }
 
-  .tool-select h2 {
+  .content-selection h2 {
     font-size: 32px;
     width: 100%;
     padding-bottom: 16px;
@@ -61,12 +73,12 @@ export default {
 
   }
 
-  .tool-icon {
+  .content-selection-icon {
     width: 48px;
     position: absolute;
   }
 
-  .tool-text {
+  .content-selection-text {
     margin-left: 64px;
     padding-top: 16px;
     height: 64px;
