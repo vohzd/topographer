@@ -10,9 +10,10 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
-    "@nuxtjs/axios": "^5.5.1",
-    "nuxt": "^2.7.1",
-    "vue-draggable-resizable": "^2.0.0-rc1",
+    "@nuxtjs/axios": "^5.5.4",
+    "nuxt": "^2.8.1",
+    "tiptap": "^1.22.5",
+    "vue-draggable-resizable": "^2.0.0-rc2",
     "vue-smooth-dnd": "^0.8.0"
   }
 }

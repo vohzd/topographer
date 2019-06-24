@@ -1,6 +1,8 @@
 <template lang="html">
   <header class="app-header-toolbar">
-    <app-logo />
+    <nuxt-link to="/" class="app-logo-container">
+      <app-logo />
+    </nuxt-link>
   </header>
 </template>
 

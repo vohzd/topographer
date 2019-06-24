@@ -1,5 +1,8 @@
 <template lang="html">
-  <nuxt-link to="/" class="app-logo-container"><img src="~/assets/logo.png" class="app-logo"/><span class="app-name">Topographer</span></nuxt-link>
+  <span>
+    <img src="~/assets/logo.png" class="app-logo"/>
+    <span class="app-name">Topographer</span>
+  </span>
 </template>
 
 <script>
