@@ -1,4 +1,5 @@
 export default {
+  experiments: null,
   variant: null,
   conversions: {
     0: 0,

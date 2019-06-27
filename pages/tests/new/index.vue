@@ -1,7 +1,7 @@
 <template lang="html">
   <div class="container-padding test-designer">
     <h1 class="mb">New Test</h1>
-    <button class="save-test-button pad">Save</button>
+    <button class="save-test-button pad" @click="save">{{ saveButtonText }}</button>
     <input type="text" placeholder="Test Name" class="pad">
     <section class="variations mt">
       <section class="variation-tabs">
@@ -31,9 +31,12 @@
 </template>
 
 <script>
+import { mapActions, mapGetters } from "vuex";
+
 export default {
   data(){
     return {
+      saveButtonText: "Save",
       editingVariant: 0,
       variants: [
         {
@@ -50,6 +53,9 @@ export default {
     }
   },
   methods: {
+    ...mapActions([
+      "saveExperiment"
+    ]),
     addNewVariant(){
       this.variants.push({
         "label": this.variants.length
@@ -57,6 +63,9 @@ export default {
     },
     editVariant(i){
       this.editingVariant = i;
+    },
+    save(){
+      this.saveExperiment(this.variants)
     }
   }
 }
