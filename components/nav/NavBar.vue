@@ -3,6 +3,8 @@
     <nuxt-link to="/" class="app-logo-container">
       <app-logo />
     </nuxt-link>
+    <nuxt-link to="/tests">Tests</nuxt-link>
+
   </header>
 </template>
 

@@ -58,6 +58,14 @@ export default {
     margin-top: 16px;
   }
 
+  .mb {
+    margin-bottom: 16px;
+  }
+
+  .pad {
+    padding: 16px;
+  }
+
   .content-selection {
     background: rgba(0,0,0,0.1);
     width: 100%;
