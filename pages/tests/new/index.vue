@@ -2,8 +2,8 @@
   <div class="container-padding test-designer">
     <h1 class="mb">New Test</h1>
     <button class="save-test-button pad" @click="save">{{ saveButtonText }}</button>
-    <input type="text" placeholder="Test Name" class="pad">
-    <section class="variations mt">
+    <input type="text" placeholder="Test Name" class="pad" v-model="experimentName">
+    <section class="variations mt" v-if="variants">
       <section class="variation-tabs">
         <div class="tab" v-for="(variant, i) in variants" @click="editVariant(i)">
           <label>{{ variant.label }}</label>
@@ -38,7 +38,8 @@ export default {
     return {
       saveButtonText: "Save",
       editingVariant: 0,
-      variants: [
+      experimentName: null,
+      initialState: [
         {
           "label": "Control",
           "tagline": "",
@@ -49,7 +50,8 @@ export default {
           "tagline": "",
           "ctaLabel": ""
         }
-      ]
+      ],
+      variants: null
     }
   },
   methods: {
@@ -64,9 +66,32 @@ export default {
     editVariant(i){
       this.editingVariant = i;
     },
+    reset(){
+      console.log("was this called?")
+      console.log(this.variants);
+      this.variants = this.initialState;
+      this.experimentName = "";
+      console.log(this.variants);
+
+    },
     save(){
-      this.saveExperiment(this.variants)
+      this.saveButtonText = "Saving...";
+      this.saveExperiment({
+        "_id": (((1+Math.random())*0x10000)|0).toString(16).substring(1),
+        "name": this.experimentName,
+        "variants": this.variants
+      });
+      setTimeout(() => {
+        this.saveButtonText = "Saved!!";
+      }, 500);
+      setTimeout(() => {
+        this.saveButtonText = "Save";
+        this.reset();
+      }, 1500);
     }
+  },
+  mounted(){
+    this.reset()
   }
 }
 </script>

@@ -4,7 +4,7 @@ export default {
   LOG_CONVERSION(state, group){
     state.conversions[group]++;
   },
-  SAVE_EXPERIMENT(state, variants){
-    state.experiments = variants;
+  SAVE_EXPERIMENT(state, experiment){
+    state.experiments.push(experiment);
   }
 };
