@@ -4,6 +4,8 @@
       <app-logo />
     </nuxt-link>
     <nuxt-link to="/tests">Tests</nuxt-link>
+    <nuxt-link to="/layouts">Layouts</nuxt-link>
+    <nuxt-link to="/pages">Pages</nuxt-link>
 
   </header>
 </template>
