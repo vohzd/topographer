@@ -12,8 +12,6 @@ module.exports = {
   modules: [
     "@nuxtjs/axios"
   ],
-  plugins: [
-    "~/plugins/grid.js",
-  ],
+  mode: "spa",
   loading: { color: "#532a55" }
 }
