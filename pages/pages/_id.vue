@@ -1,15 +1,26 @@
 <template lang="html">
   <main class="page-editor container-padding about-me">
 
-    <select>
-      <option>hello</option>
-    </select>
-    <div class="" contenteditable class="editor-canvas">
+    <div>
+      <label>Font</label>
+      <select v-model="selectedFont">
+        <option v-for="font in availableFonts" :value="font.value">{{ font.name }}</option>
+      </select>
+    </div>
+
+    <div contenteditable class="editor-canvas mt">
       <h1>Hello</h1>
       <p class="mt">Lorem ipsum dolor amet ethical kickstarter sartorial cloud bread pitchfork blue bottle vaporware migas. Keytar poutine put a bird on it glossier. Beard pinterest vape irony williamsburg lomo flannel man bun fixie quinoa gentrify pour-over succulents mustache vegan.</p>
       <h2 class="mt">Second Header</h2>
       <p class="mt">Lorem ipsum dolor amet ethical kickstarter sartorial cloud bread pitchfork blue bottle vaporware migas. Keytar poutine put a bird on it glossier. Beard pinterest vape irony williamsburg lomo flannel man bun fixie quinoa gentrify pour-over succulents mustache vegan.</p>
     </div>
+
+
+    <style>
+      :root {
+        --font-family: {{ selectedFont }};
+      }
+    </style>
 <!--
     <editor-content :editor="editor" class="editor-canvas"/>
 
@@ -33,6 +44,7 @@
 
 
 <script>
+import fonts from "~/assets/fonts/fonts-definition.js";
 import { Container, Draggable } from "vue-smooth-dnd";
 import { Editor, EditorContent, EditorMenuBar } from "tiptap";
 
@@ -40,37 +52,38 @@ export default {
   components: { Container, Draggable, EditorContent, EditorMenuBar },
   data(){
     return {
-      editor: null
+      editor: null,
+      selectedFont: "monospace",
+      availableFonts: []
     }
   },
   mounted(){
+    /*
     this.editor = new Editor({
       content: `
         <h1>Header</h1>
         <p>Lorem ipsum dolor amet ethical kickstarter sartorial cloud bread pitchfork blue bottle vaporware migas. Keytar poutine put a bird on it glossier. Beard pinterest vape irony williamsburg lomo flannel man bun fixie quinoa gentrify pour-over succulents mustache vegan.</p>
         `
-    })
+    });*/
+    this.availableFonts = fonts;
   },
   beforeDestroy() {
-    this.editor.destroy()
+    //this.editor.destroy()
   }
 };
 </script>
 
 <style lang="css">
 
-  .draggable-item:hover {
-    background: rgba(0,0,0,0.1);
-    cursor:pointer;
-    opacity: 0.6;
-  }
 
 
   .editor-canvas {
     padding: 16px;
-    background: rgba(0,0,0,0.1);
+    background: rgba(0,0,0,0.01);
     border-radius: 2px;
-    box-shadow: inset 0px 0px 20px rgba(0,0,0,0.1);
+    box-shadow: inset 0px 0px 48px rgba(0,0,0,0.05);
+    outline: none;
+    font-family: var(--font-family);
   }
 
   .editor-canvas h1 {
